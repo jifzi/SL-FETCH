@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SL fetch</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <img class="logo" src="../../assets/logo.png" alt="SL fetch logo" />
+          <div class="brandText">
+            <div class="brandName">SL fetch</div>
+            <div class="brandTag">Sea-lion speed. Seal-inspired.</div>
+          </div>
+        </div>
+        <a
+          class="link"
+          href="https://github.com/JunkFood02/Seal"
+          title="Inspired by Seal (Android)"
+          >Inspired by Seal</a
+        >
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <div class="cardTitle">New download</div>
+
+          <label class="field">
+            <span class="label">Video URL</span>
+            <input id="url" class="input" placeholder="Paste a link (YouTube, etc.)" />
+          </label>
+
+          <div class="row">
+            <label class="field grow">
+              <span class="label">Save to</span>
+              <div class="inputRow">
+                <input id="outDir" class="input" placeholder="Choose a folder…" readonly />
+                <button id="pickFolder" class="btn secondary" type="button">Browse</button>
+              </div>
+            </label>
+          </div>
+
+          <div class="row grid">
+            <label class="field">
+              <span class="label">Mode</span>
+              <select id="mode" class="select">
+                <option value="video" selected>Video</option>
+                <option value="audio">Audio</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Video quality</span>
+              <select id="quality" class="select">
+                <option value="best" selected>Best available</option>
+                <option value="1080">Up to 1080p</option>
+                <option value="720">Up to 720p</option>
+                <option value="480">Up to 480p</option>
+                <option value="360">Up to 360p</option>
+                <option value="max">Max (bestvideo+bestaudio)</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Container</span>
+              <select id="container" class="select">
+                <option value="mp4" selected>MP4</option>
+                <option value="mkv">MKV</option>
+                <option value="mp3">MP3 (audio)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="row grid">
+            <label class="field">
+              <span class="label">Audio quality</span>
+              <select id="audioQuality" class="select">
+                <option value="best" selected>Best</option>
+                <option value="320">320 kbps</option>
+                <option value="256">256 kbps</option>
+                <option value="192">192 kbps</option>
+                <option value="128">128 kbps</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Subtitles</span>
+              <div class="inputRow">
+                <label style="display:flex;align-items:center;gap:8px;">
+                  <input id="subsEnabled" type="checkbox" checked />
+                  <span class="label" style="margin:0;">Download + embed</span>
+                </label>
+              </div>
+            </label>
+
+            <label class="field">
+              <span class="label">Subtitle language</span>
+              <select id="subsLang" class="select">
+                <option value="en" selected>English</option>
+                <option value="all">All available</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="start" class="btn primary" type="button">Fetch</button>
+          </div>
+
+          <div id="error" class="error" hidden></div>
+        </section>
+
+        <section class="card">
+          <div class="cardTitle">Downloads</div>
+          <div id="downloads" class="downloads empty">
+            <div class="emptyState">
+              <div class="emptyTitle">No downloads yet</div>
+              <div class="emptySub">Paste a link above and hit Fetch.</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+

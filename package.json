@@ -1,0 +1,19 @@
+{
+  "name": "sl-fetch",
+  "version": "1.0.0",
+  "description": "SL fetch — a Seal-inspired desktop downloader UI for yt-dlp.",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "electron .",
+    "start": "electron .",
+    "pack:win": "electron-packager . \"SL fetch\" --platform=win32 --arch=x64 --out=dist --overwrite --prune=true --asar --asar.unpackDir=bin"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@electron/packager": "^19.0.5",
+    "electron": "^40.6.0"
+  }
+}
