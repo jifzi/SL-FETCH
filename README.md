@@ -14,7 +14,8 @@ SL fetch is a clean UI on top of `yt-dlp` (and `ffmpeg`) with quality controls a
 
 ### Download (recommended)
 
-Grab the latest Windows build from **Releases** (portable `.exe` folder).
+Grab the latest Windows build from **Releases** (portable `.zip` folder).
+unzip the folder, and open the sl-fetch.exe app to use!
 
 Release builds are intended to include the required binaries so the app works immediately after download.
 
