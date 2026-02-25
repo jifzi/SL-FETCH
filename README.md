@@ -1,62 +1,67 @@
-## SL fetch
+## SL fetch 🦭
 
-Desktop video/audio downloader UI for **yt-dlp**, inspired by the Android app **Seal** (but built as a separate desktop app).
+Sea‑lion–themed video & audio downloader for Windows, inspired by the Android app [Seal](https://github.com/JunkFood02/Seal) but built as a desktop app.  
+SL fetch is a clean UI on top of `yt-dlp` (and `ffmpeg`) with quality controls and subtitle support.
 
-### Features (current)
+### Features
 
-- Paste URL → fetch video or audio
-- Choose output folder
-- Basic quality presets + container choice
-- Downloads list with progress, cancel, and “Show in folder”
+- Paste a URL → download **video or audio**
+- Pick output folder
+- **Video quality controls**: Best, or “up to” 1080p / 720p / 480p / 360p / Max
+- **Audio quality controls**: Best, 320 / 256 / 192 / 128 kbps (audio mode)
+- **Subtitles**: optional download + embed (English or all languages)
+- Modern, Seal‑inspired UI with a downloads list, progress, cancel, and “Show in folder”
 
-### How to make it “just work” for normal users
+### Download (recommended)
 
-For people who download **SL fetch** from you, the goal is:
+Grab the latest Windows build from **Releases** (portable `.exe` folder).
 
-- They download a ZIP / installer
-- They open **SL fetch**
-- It downloads videos right away — **no extra tools to install**
+Release builds are intended to include the required binaries so the app works immediately after download.
 
-To get that:
+### Build from source
 
-1. Download the **Windows 64‑bit `yt-dlp.exe`** from the official release page  
-   (`https://github.com/yt-dlp/yt-dlp/releases/latest`)
-2. (Recommended) Download **Windows ffmpeg build** (e.g. from `https://www.gyan.dev/ffmpeg/builds/`) and take the `ffmpeg.exe` file.
-3. Put both files into this folder in the project before packaging:
+Requirements:
 
-   - `bin/yt-dlp.exe`
-   - `bin/ffmpeg.exe`
+- Node.js
 
-When you run `npm run pack:win`, those binaries are bundled. For your users:
-
-- They do **not** need Node, yt-dlp, or ffmpeg.
-- They just run the built **SL fetch** app and it works.
-
-### Requirements for you (the developer)
-
-- **Node.js** (installed on your machine)
-- **yt-dlp.exe** and **ffmpeg.exe** placed in `bin/` (see above) before you package.
-
-### Run (dev) on your machine
+Install:
 
 ```bash
-cd sl-fetch
+git clone https://github.com/jifzi/SL-FETCH.git
+cd SL-FETCH
 npm install
+```
+
+Run (dev):
+
+```bash
 npm run dev
 ```
 
-### Package for Windows
+### Packaging a Windows build
+
+To create a Windows build that works out-of-the-box, place these files in `bin/` **before** packaging:
+
+- `bin/yt-dlp.exe` (from `https://github.com/yt-dlp/yt-dlp/releases/latest`)
+- `bin/ffmpeg.exe` (from an ffmpeg Windows build, e.g. `https://www.gyan.dev/ffmpeg/builds/`)
+
+Then run:
 
 ```bash
 npm run pack:win
 ```
 
-Your packaged app will appear in `dist/`.
+Output (typical):
 
-Because `bin/` is kept outside the ASAR bundle, any `yt-dlp.exe` and `ffmpeg.exe` you put there will be shipped with the app so that **normal users don’t have to install anything extra**.
+- `dist/SL fetch-win32-x64/SL fetch.exe`
+
+### Notes
+
+- Not affiliated with Seal; it’s only inspired by its design and idea.
+- Respect the terms of service and copyright rules of any site downloaded from.
 
 ### Credits
 
-- Inspired by: Seal (`https://github.com/JunkFood02/Seal`)
-- Download engine: yt-dlp
+- UI inspiration: [Seal](https://github.com/JunkFood02/Seal)
+- Download engine: [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
