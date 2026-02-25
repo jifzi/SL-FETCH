@@ -47,6 +47,15 @@ body{
   align-items:center;
   gap: 12px;
 }
+.brandLink{
+  text-decoration:none;
+  color: inherit;
+}
+.brandLink:focus-visible{
+  outline: 2px solid rgba(94,225,255,0.70);
+  outline-offset: 3px;
+  border-radius: 18px;
+}
 .logo{
   width:44px;
   height:44px;
@@ -267,6 +276,27 @@ body{
 }
 .miniBtn:hover{ border-color: rgba(94,225,255,0.30); }
 .miniBtn.danger:hover{ border-color: rgba(255,92,122,0.35); }
+
+ .footer{
+  padding: 8px 22px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap: 12px;
+  font-size: 11.5px;
+  color: var(--muted2);
+}
+.footerText{
+  opacity: 0.9;
+}
+.footerLink{
+  color: var(--muted);
+  text-decoration:none;
+}
+.footerLink:hover{
+  color: var(--text);
+  text-decoration:underline;
+}
 
 @media (max-width: 980px){
   .content{ grid-template-columns: 1fr; }
